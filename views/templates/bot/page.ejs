@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title><%= title %> </title>
+        <% include('../blocks/head'); %>
+    </head>
+    <body>
+        <h1><%= botUser.username %></h1>
+        <img src="<%= botUser.avatarURL %>" alt="botPicture">
+        <div class="btn">
+            <code><%= botData.prefix %> </code>
+            <p><%= botData.votes.monthlyVotes %></p>
+            <button onclick="window.location.href='<%= botData.links.inviteURL %>'" id="invite">Invite</button>
+            <button onclick="window.location.href='<%= botData.links.supportURL %>'" id="support">Support</button>
+
+            <% if (botData.links.githubURL) { %>
+                <button onclick="window.location.href='<%= botData.links.githubURL %>'" id="github">GitHub</button>
+            <% } %> 
+
+            <% if (botData.links.website) { %>
+                <button onclick="window.location.href='<%= botData.links.website %>'" id="website">Website</button>
+            <% } %> 
+            <button onclick="window.location.href='<%= `${botUser.id}/vote` %>'" id="Vote">Vote</button>
+        </div>
+    </body>
+</html>
