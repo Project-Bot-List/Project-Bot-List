@@ -28,12 +28,12 @@ const botSchema = new mongoose.Schema({
       guildCount: { type: Number, default: null },
       shardCount: { type: Number, default: null },
     },
-    verified: { type: Boolean, default: false },
-    token: { type: String, required: true, unique: true },
     discordInfo: {
       username: { type: String, required: true },
       avatarURL: { type: String, required: true },
-    }
+    },
+    verified: { type: Boolean, default: false },
+    token: { type: String, required: true, unique: true },
 });
 
 module.exports = mongoose.model("Bots", botSchema);

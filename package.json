@@ -1,0 +1,24 @@
+{
+  "name": "project",
+  "version": "2.0.0",
+  "description": "A bot list project.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Syn05",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "ejs": "^3.1.5",
+    "eris": "^0.13.3",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "moment": "^2.28.0",
+    "mongoose": "^5.10.5"
+  }
+}
