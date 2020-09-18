@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 module.exports = (client) => { 
+
     // Routes
     const login = require('./login');
     const api = require('./api');
@@ -10,4 +11,5 @@ module.exports = (client) => {
     router.use('/api', api);
     router.use('/', website);
     return router;
+
 }
