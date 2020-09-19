@@ -8,6 +8,15 @@ const app = Express();
 
 module.exports = (client) => {
 
+    // Static Files
+    app.use(Express.static('dashboard/public'));
+    app.use('/css', Express.static(__dirname + 'public/css'));
+    app.use('/images', Express.static(__dirname + 'public/images'));
+    
+    // Set Views.
+    app.set('views', 'dashboard/templates');
+    app.set('view engine', 'ejs');
+
     // Create Session
     app.use(session({
         secret: process.env.SESSION_SECRET,
@@ -24,15 +33,6 @@ module.exports = (client) => {
     // Development Tools
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
-
-    // Static Files
-    app.use(Express.static('public'));
-    app.use('/css', Express.static(__dirname + 'public/css'));
-    app.use('/images', Express.static(__dirname + 'public/images'));
-
-    // Set Views.
-    app.set('views', './templates');
-    app.set('view engine', 'ejs');
 
     // Routes
     const routes = require('./routes')(client);
@@ -57,13 +57,13 @@ module.exports = (client) => {
     app.use((error, req, res, next) => {
         if (error.status) {
             res.status(error.status);
-            res.render('templates/pages/404', {
+            res.render('pages/404', {
                 title: 'Project | Not found'
             });
         } else {
             console.log(error)
             res.status(500);
-            res.render('templates/pages/error', {
+            res.render('pages/error', {
                 title: 'Project | Error'
             });
         }

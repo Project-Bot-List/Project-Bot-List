@@ -1,4 +1,13 @@
 <!DOCTYPE html>
 <html>
-    <%= import('blocks/head', { title }) %> 
+    <head>
+        <%- include('../blocks/head', { title }) %> 
+    </head>
+    <body>
+        <div class="errorMessage">
+            <img src="https://i.imgur.com/zQZbHee.png">
+            <h1>404</h1>
+            <h2>Page not found.</h2>
+        </div>
+    </body>
 </html>
