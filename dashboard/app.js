@@ -1,17 +1,19 @@
-const Express = require('express');
+require('./strategies/discord');
+
+const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const Store = require('connect-mongo')(session);
-const app = Express();
+const app = express();
 
 module.exports = (client) => {
 
     // Static Files
-    app.use(Express.static('dashboard/public'));
-    app.use('/css', Express.static(__dirname + 'public/css'));
-    app.use('/images', Express.static(__dirname + 'public/images'));
+    app.use(express.static('dashboard/public'));
+    app.use('/css', express.static(__dirname + 'public/css'));
+    app.use('/images', express.static(__dirname + 'public/images'));
     
     // Set Views.
     app.set('views', 'dashboard/templates');
