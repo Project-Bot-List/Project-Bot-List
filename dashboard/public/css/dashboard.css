@@ -59,6 +59,7 @@ body {
 }
 
 .form textarea {
+    resize: none;
     width: 99%;
     height: 500px;
     background-color: lightblue;
