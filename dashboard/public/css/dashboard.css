@@ -66,9 +66,9 @@ body {
 }
 
 ::-moz-selection { /* Code for Firefox */
-    background: gray;
+    background: rgb(85, 218, 140);
 }
   
 ::selection {
-    background: gray;
+    background: rgb(85, 218, 140);
 }
