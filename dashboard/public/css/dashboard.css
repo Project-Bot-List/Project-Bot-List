@@ -14,6 +14,7 @@ body {
     margin-top: 10%;
     margin-left: 5cm;
     text-align: left;
+    text-shadow: 2px 2px #000000;
 }
 
 .errorMessage h2 {
@@ -22,6 +23,7 @@ body {
     color: #808080;
     margin-left: 5cm;
     text-align: left;
+    text-shadow: 2px 2px #000000;
 }
 
 .errorMessage img {
